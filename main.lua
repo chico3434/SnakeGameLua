@@ -41,7 +41,7 @@ function love.update(dt)
   elseif snake.direction == 'right' then
     snake.cell[1].x = snake.cell[1].x + 1
   end
-  if (snake.cell[1].x - apple.y < 9 or snake.cell[1].x - apple.x > 9) and (snake.cell[1].y - apple.y < 9 or snake.cell[1].y - apple.y > 9) then
+  if (snake.cell[1].x - apple.x <= 10 and snake.cell[1].x - apple.x >= -10) and (snake.cell[1].y - apple.y <= 10 and snake.cell[1].y - apple.y >= -10) then
     snake.size = snake.size + 1
     snake.cell[snake.size] = {}
     snake.cell[snake.size].x = snake.cell[snake.size-1].x + 10 
